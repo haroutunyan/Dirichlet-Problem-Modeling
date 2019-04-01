@@ -20,8 +20,7 @@ namespace Animations
         static double Limit;
         Point[] Points;
         List<List<Point>> AllTrajectories;
-        static int step = 0;
-        bool IsPointsDrawn = false;
+        static int step = 0;        
 
         public MainWindow()
         {
@@ -41,7 +40,6 @@ namespace Animations
             Canvas.SetTop(circle, (canvas.ActualHeight - circle.Height) / 2);
 
             canvas.Children.Add(circle);
-
         }
 
         private void PrepareSmallSpace()
@@ -62,7 +60,7 @@ namespace Animations
         }
 
         private async Task DrawPoints()
-        {            
+        {
             for (int i = 0; i < Points.Length; i++)
             {
                 double x = Points[i].Radius * Math.Cos(Points[i].Angle) * Radius;
@@ -73,19 +71,12 @@ namespace Animations
                 //await Task.Delay(100);
 
                 canvas.Children.Add(Points[i].Ellipse);
-            }
-
-            IsPointsDrawn = true;
+            }            
         }
 
         private void ClearPoints()
         {
-            //for (int i = 0; i < Points?.Length; i++)
-            //{
-            //    canvas.Children.Remove(Points[i].Ellipse);
-            //}
-            canvas.Children.RemoveRange(0, canvas.Children.Count);
-            IsPointsDrawn = false;
+            canvas.Children.RemoveRange(0, canvas.Children.Count);            
         }
 
         private void GeneratePoints()
@@ -149,7 +140,18 @@ namespace Animations
 
         private void ShowResultsButton_Click(object sender, RoutedEventArgs e)
         {
+            double solution = 0;
+            foreach (var trajectory in AllTrajectories)
+            {
+                Point lastPoint = trajectory.LastOrDefault();
 
+                solution += getFunctionValue(lastPoint.Radius, lastPoint.Angle);
+            }
+
+            Point firstPoint = AllTrajectories.FirstOrDefault().FirstOrDefault();
+            double functionValue = getFunctionValue(firstPoint.Radius, firstPoint.Angle);
+
+            MessageBox.Show(string.Format("Solution: {0} \nFunction: {1}", solution / AllTrajectories.Count, functionValue));
         }
 
         private async void ShowAllButton_Click(object sender, RoutedEventArgs e)
@@ -246,5 +248,7 @@ namespace Animations
         {
             return radius * Math.Cos(angle);
         }
+
+
     }
 }
