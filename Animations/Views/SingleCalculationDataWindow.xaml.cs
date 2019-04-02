@@ -23,5 +23,24 @@ namespace Animations.Views
         {
             InitializeComponent();
         }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(countBox.Text, out int count) && double.TryParse(limitBox.Text, out double limit))
+            {
+                SingleCalculationWindow singleCalculationWindow = new SingleCalculationWindow(count, limit);
+                singleCalculationWindow.Show();
+                singleCalculationDataWindow.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Credetials");
+            }
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            singleCalculationDataWindow.Close();
+        }
     }
 }

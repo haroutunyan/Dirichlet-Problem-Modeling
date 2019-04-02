@@ -4,9 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Animations.Views"
-        mc:Ignorable="d"
-        Title="SingleCalculationDataWindow" Height="450" Width="800">
+        mc:Ignorable="d" ResizeMode="NoResize"
+        Title="Single Calculation Data Window" Height="180" Width="400" x:Name="singleCalculationDataWindow" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*" />
+            <RowDefinition Height="53*" />
+            <RowDefinition Height="33*" />
+        </Grid.RowDefinitions>
+        <Label Content="Enter The Count of Random Numbers" Grid.Row="0" HorizontalAlignment="Center" 
+               VerticalAlignment="Top" HorizontalContentAlignment="Stretch" Height="26" Margin="96,0,85,0" Width="211" />
+        <TextBox x:Name="countBox" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="18" Margin="96,26,96,9" />
+        <Label Content="Enter The Limit" Grid.Row="1" HorizontalAlignment="Center" 
+               VerticalAlignment="Top" HorizontalContentAlignment="Stretch" Height="26" Margin="145,0" Width="102" />
+        <TextBox x:Name="limitBox" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="18" Margin="96,23,96,12" />
+        <DockPanel Grid.Row="2">
+            <Button x:Name="cancelButton" Click="CancelButton_Click" DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="10 0" Padding="5 0" Content="Cancel" Height="20"/>
+            <Button x:Name="saveButton" Click="SaveButton_Click" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="10 0" Padding="5 0" Content="Save" Height="20"/>
+        </DockPanel>
     </Grid>
 </Window>

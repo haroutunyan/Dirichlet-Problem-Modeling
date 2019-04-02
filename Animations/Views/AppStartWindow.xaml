@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Animations.Views"
         xmlns:ribbon="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon"
         mc:Ignorable="d"
-        Title="AppStartWindow" Height="274" Width="320">
+        Title="AppStartWindow" Height="274" Width="320" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <ribbon:Ribbon>
             <Ribbon.ApplicationMenu>

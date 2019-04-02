@@ -23,5 +23,25 @@ namespace Animations.Views
         {
             InitializeComponent();
         }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            multipleCalculationDataWindow.Close();
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(n1Box.Text, out int n1) && int.TryParse(n2Box.Text, out int n2) &&
+                int.TryParse(n3Box.Text, out int n3) && int.TryParse(n4Box.Text, out int n4))
+            {
+                MultipleCalculationWindow multipleCalculationWindow = new MultipleCalculationWindow(n1, n2, n3, n4);
+                multipleCalculationWindow.Show();
+                multipleCalculationDataWindow.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Credentials");
+            }
+        }
     }
 }

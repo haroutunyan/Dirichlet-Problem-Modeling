@@ -26,12 +26,14 @@ namespace Animations.Views
 
         private void SingleCalculation_Click(object sender, RoutedEventArgs e)
         {
-
+            SingleCalculationDataWindow singleCalculationDataWindow = new SingleCalculationDataWindow();
+            singleCalculationDataWindow.Show();
         }
 
         private void MultipleCalculation_Click(object sender, RoutedEventArgs e)
         {
-
+            MultipleCalculationDataWindow multipleCalculationDataWindow = new MultipleCalculationDataWindow();
+            multipleCalculationDataWindow.Show();
         }
 
         private void About_Click(object sender, RoutedEventArgs e)

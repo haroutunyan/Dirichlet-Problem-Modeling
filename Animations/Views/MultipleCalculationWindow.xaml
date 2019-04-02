@@ -3,10 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dvc="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         xmlns:local="clr-namespace:Animations.Views"
         mc:Ignorable="d"
         Title="MultipleCalculationWindow" Height="450" Width="800">
     <Grid>
-        
+        <dvc:Chart x:Name="dataChart" Title="Comparison Between ">
+            <dvc:Chart.Series>
+                <dvc:ColumnSeries Title="Experience" IndependentValueBinding="{Binding Path=Key}" DependentValueBinding="{Binding Path=Value}"></dvc:ColumnSeries>
+            </dvc:Chart.Series>
+        </dvc:Chart>
     </Grid>
 </Window>

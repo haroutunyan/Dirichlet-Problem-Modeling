@@ -7,29 +7,5 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*" />
-            <ColumnDefinition Width="15*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Label Content="Enter the count of random numbers" Grid.Row="0" Grid.Column="0" 
-               HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" />
-        <TextBox x:Name="countBox" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
-        <Label Content="Enter the epsilion" Grid.Row="1" Grid.Column="0" 
-               HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" />
-        <TextBox x:Name="epsilionBox" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
-        <Button Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Step by Step"
-                HorizontalContentAlignment="Stretch" x:Name="stepByStepButton" Click="StepByStepButton_Click" />
-        <Button Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Show Results"
-                HorizontalContentAlignment="Stretch" x:Name="showResultsButton" Click="ShowResultsButton_Click" />
-        <Button Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Show All"
-                HorizontalContentAlignment="Stretch" x:Name="showAllButton" Click="ShowAllButton_Click" />
-        <Canvas x:Name="canvas" Grid.RowSpan="5" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
     </Grid>
 </Window>

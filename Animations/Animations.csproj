@@ -71,6 +71,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\EdgeValue.cs" />
+    <Compile Include="Common\GenerateRandomData.cs" />
     <Compile Include="Views\AppStartWindow.xaml.cs">
       <DependentUpon>AppStartWindow.xaml</DependentUpon>
     </Compile>
@@ -170,6 +172,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WPFToolkit.DataVisualization">
+      <Version>3.5.50211.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
