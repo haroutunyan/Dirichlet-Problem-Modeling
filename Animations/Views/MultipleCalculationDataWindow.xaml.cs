@@ -32,9 +32,10 @@ namespace Animations.Views
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             if (int.TryParse(n1Box.Text, out int n1) && int.TryParse(n2Box.Text, out int n2) &&
-                int.TryParse(n3Box.Text, out int n3) && int.TryParse(n4Box.Text, out int n4))
+                int.TryParse(n3Box.Text, out int n3) && int.TryParse(n4Box.Text, out int n4)
+                && double.TryParse(limitBox.Text, out double limit))
             {
-                MultipleCalculationWindow multipleCalculationWindow = new MultipleCalculationWindow(n1, n2, n3, n4);
+                MultipleCalculationWindow multipleCalculationWindow = new MultipleCalculationWindow(n1, n2, n3, n4, limit);
                 multipleCalculationWindow.Show();
                 multipleCalculationDataWindow.Close();
             }

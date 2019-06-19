@@ -5,25 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
         xmlns:local="clr-namespace:Animations.Views"
         mc:Ignorable="d" x:Name="multipleCalculationDataWindow"
-        Title="MultipleCalculationDataWindow" Height="200" Width="300">
+        Title="Multiple Calculation Data Window" WindowStartupLocation="CenterScreen" Height="220" Width="300">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="98*" />
+            <RowDefinition Height="47*" />
+            <RowDefinition Height="44*" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.ColumnSpan="2" Content="Enter The Numbers of Comparison Points" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <TextBox x:Name="n1Box" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" />
-        <TextBox x:Name="n2Box" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" />
-        <TextBox x:Name="n3Box" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" />
-        <TextBox x:Name="n4Box" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" />
-        <DockPanel Grid.Row="3" Grid.ColumnSpan="2">
+        <GroupBox Header="Counts of Comparison Points" Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="n1Box" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" />
+                <TextBox x:Name="n2Box" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" />
+                <TextBox x:Name="n3Box" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" />
+                <TextBox x:Name="n4Box" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" />
+            </Grid>
+        </GroupBox>
+        <Label Content="Enter The Limit" Grid.Row="1" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" />
+        <TextBox x:Name="limitBox" Grid.Row="1" HorizontalAlignment="Center" Width="100" VerticalAlignment="Bottom" Height="18" Margin="96,0,96,5" />
+        <DockPanel Grid.Row="2">
             <Button x:Name="cancelButton" Click="CancelButton_Click" DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="10 0" Padding="5 0" Content="Cancel" Height="20"/>
             <Button x:Name="saveButton" Click="SaveButton_Click" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="10 0" Padding="5 0" Content="Save" Height="20"/>
         </DockPanel>

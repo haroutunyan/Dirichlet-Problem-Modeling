@@ -18,13 +18,43 @@ namespace Animations.Common
             int randomStartIndex = 0;
             do
             {
-                randomStartIndex = random.Next(points.Length);
+                randomStartIndex = random.Next(points.Length - 1);
             } while (points[randomStartIndex].Radius >= limit);
 
             for (int i = 1; i < points.Length; i++)
             {
                 List<Point> trajectoryPoints = new List<Point>();
                 trajectoryPoints.Add(points[randomStartIndex]);
+
+                Point point;
+                while (true)
+                {
+                    int randomIndex = random.Next(points.Length);
+
+                    trajectoryPoints.Add(points[randomIndex]);
+
+                    if (points[randomIndex].Radius >= limit)
+                    {
+                        point = points[randomIndex];
+                        break;
+                    }
+                }
+
+                AllTrajectories.Add(trajectoryPoints);
+            }
+
+            return AllTrajectories;
+        }
+
+        public static List<List<Point>> GenerateRandomTrajectoriesByStartPoint(double limit, Point startPoint, Point[] points)
+        {
+            List<List<Point>> AllTrajectories = new List<List<Point>>();
+            Random random = new Random();
+
+            for (int i = 1; i < points.Length; i++)
+            {
+                List<Point> trajectoryPoints = new List<Point>();
+                trajectoryPoints.Add(startPoint);
 
                 Point point;
                 while (true)

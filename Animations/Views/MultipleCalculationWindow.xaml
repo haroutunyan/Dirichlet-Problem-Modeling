@@ -6,11 +6,11 @@
         xmlns:dvc="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         xmlns:local="clr-namespace:Animations.Views"
         mc:Ignorable="d"
-        Title="MultipleCalculationWindow" Height="450" Width="800">
+        Title="Multiple Calculation Window" WindowStartupLocation="CenterScreen" Height="450" Width="800">
     <Grid>
-        <dvc:Chart x:Name="dataChart" Title="Comparison Between ">
+        <dvc:Chart x:Name="dataChart" Title="Comparison Between 4 Different StepSizes">
             <dvc:Chart.Series>
-                <dvc:ColumnSeries Title="Experience" IndependentValueBinding="{Binding Path=Key}" DependentValueBinding="{Binding Path=Value}"></dvc:ColumnSeries>
+                <dvc:ColumnSeries Title="Differences" IndependentValueBinding="{Binding Path=Key}" DependentValueBinding="{Binding Path=Value}"></dvc:ColumnSeries>
             </dvc:Chart.Series>
         </dvc:Chart>
     </Grid>
